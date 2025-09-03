@@ -1,0 +1,76 @@
+/* 공통 변수 */
+:root {
+    /* 색상 */
+    --color-white:#fff;
+    --color-black:#000;
+    --color-bg:#f5f5f5;
+    --color-point_light:#FE9300;
+    --color-point_dark:#FE7300;
+    /* 글꼴(desktop) */
+    --text-title70-d:4.375rem;
+    --text-sub_title55-d:3.438rem;
+    --text-content20-d:1.25rem;
+    --text-spon_btn34-d:2.125rem;
+    --text-spon_q_btn26-d:1.625rem;
+    --text-point30-d:1.875rem;
+    /* 글꼴(tablet) */
+    --text-title50-t:3.125rem;
+    --text-sub_title40-t:2.5rem;
+    --text-content16-t:1rem;
+    --text-spon_btn22-t-m:1.375rem;
+    --text-spon_q_btn20-t-m:1.25rem;
+    --text-point28-t:1.75rem;
+    --text-point24-t:1.5rem;
+    /* 글꼴(mobile) */
+    --text-title30-m:1.875rem;
+    --text-sub_title24-m:1.5rem;
+    --text-content14-m:0.875rem;
+    --text-point24-m:1.5rem;
+    --text-point18-m:1.125rem;
+    /* 행간, 자간, 굵기 */
+    --line-150:150%;
+    --line-130:130%;
+    --letter-minus2:;
+    --weight-medium:500;
+    --weight-semi-bold:600;
+    --weight-bold:700;
+}
+
+/* 공통 common.css */
+#wrap .bg {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+#wrap .bg .container {
+    max-width:1250px; min-width:320px;
+    height:100vh; overflow:hidden; margin:0 auto;
+    background:rgba(10,100,10,0);
+    text-align:center;
+    padding:200px 0 0 0;
+}
+#wrap .bg .container .spon_btn {
+    display:block; width:396px; height:74px;
+    font-size:var(--text-spon_btn34-d);
+    font-weight:var(--weight-bold);
+    color:var(--color-white);
+    background:linear-gradient(to right,var(--color-point_light),var(--color-point_dark));
+    border-radius:50px;
+    padding:20px 70px;
+    margin:0 auto;
+}
+#wrap .bg .container .spon_btn img {
+    /* padding-left:10px; */
+}
+#wrap .bg .container h2 {
+    font-size:var(--text-sub_title55-d);
+    font-weight:var(--weight-bold);
+    line-height:var(--line-130);
+    letter-spacing:var(--letter-minus2);
+    text-align:center;
+    margin-bottom:80px;
+}
+#wrap .bg .container h2+p {
+    font-size:var(--text-content20-d);
+    line-height:var(--line-150);
+}

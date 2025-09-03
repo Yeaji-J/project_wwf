@@ -1,0 +1,253 @@
+#wrap {
+    
+}
+/* --------------------------------------------------- 1행 */
+#wrap .row1 {
+    background-image:url(../images/pc_row1_bg.png);position:relative;
+}
+#wrap .row1::after {
+    content:''; display:block;
+    width:100%; height:100%;
+    background:linear-gradient(transparent, rgba(0,0,0,0.8));
+    position:absolute; left:0; top:0;
+    z-index:100; /* position의 선택속성이기 때문에 position 선택자가 미리 선언되었어야 한다  */
+}
+#wrap .row1 #visual {position:relative; z-index:110;
+}
+#wrap .row1 #visual .logo {
+    text-align:left;
+    margin-bottom:100px;
+}
+#wrap .row1 #visual .logo a {}
+#wrap .row1 #visual .logo a img {}
+#wrap .row1 #visual .title {
+    font-size:var(--text-title70-d);
+    line-height:var(--line-130);
+    letter-spacing:var(--letter-minus2);
+    color:var(--color-white);
+    margin-bottom:90px;
+}
+#wrap .row1 #visual .title em {font-weight:var(--weight-bold);}
+/* 후원 버튼 */
+#wrap .row1 #visual .spon_btn {
+}
+#wrap .row1 #visual .spon_btn img {}
+/* 후원 질문 버튼 */
+#wrap .row1 #visual .spon_q_btn {
+    display:block; width: 550px; height:59px;
+    color:var(--color-white); background:var(--color-black);
+    font-size:var(--text-spon_q_btn26-d);
+    padding:10px 40px;
+    border-radius:50px;
+    margin:150px 0;
+    display:flex;
+    flex-flow:row nowrap; justify-content:center; align-items: center;
+}
+#wrap .row1 #visual .spon_q_btn img {}
+#wrap .row1 #visual .spon_q_btn span {
+    padding:0 10px;
+}
+/* --------------------------------------------------- 2행 퀴즈*/
+#wrap .row2 {background-image:url(../images/pc_row2_bg.png);}
+#wrap .row2 #quiz {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    height:max-content; padding-bottom:160px;
+    color:var(--color-white);
+}
+#wrap .row2 #quiz > * {}
+#wrap .row2 #quiz .quiz_list {color:var(--color-white);}
+#wrap .row2 #quiz .quiz_list h2 {
+    margin-bottom:30px;
+}
+#wrap .row2 #quiz .quiz_list p {
+    margin-bottom:30px;
+    text-align:left;
+}
+#wrap .row2 #quiz .quiz_list #quiz_frm {
+}
+#wrap .row2 #quiz .quiz_list #quiz_frm .list {
+    display:flex;
+    flex-flow:column nowrap; gap:20px; justify-content:left; align-items:left;
+
+}
+#wrap .row2 #quiz .quiz_list #quiz_frm .list li {
+    text-align:left;
+}
+#wrap .row2 #quiz .quiz_list #quiz_frm .list li input[id^=q] {display:none;}
+#wrap .row2 #quiz .quiz_list #quiz_frm .list li input[id^=q]:checked + label {
+    background-image:url(../images/pc_checked_icon.png);
+}
+#wrap .row2 #quiz .quiz_list #quiz_frm .list li label {
+    background-image:url(../images/pc_unchecked_icon.png);
+    padding-left:60px; line-height:40px;
+    background-size:40px;
+    background-repeat:no-repeat;
+    font-size:var(--text-content20-d);
+    display:inline-block;
+}
+/* 정답 버튼 */
+#wrap .row2 #quiz .quiz_list #quiz_frm #quiz_a_btn {
+    background:var(--color-black); color:var(--color-white);
+    font-size:var(--text-content20-d);
+    padding:15px 150px;
+    border-radius:50px;
+    margin-top:30px;
+    display:block;
+}
+#wrap .row2 #quiz .quiz_current {
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:center;
+    gap:40px;
+}
+#wrap .row2 #quiz .quiz_current .status {
+    width:584px; height:231px;
+    background:var(--color-white); overflow:hidden;
+    border-radius:20px;
+    margin-left:50px;
+}
+#wrap .row2 #quiz .quiz_current .status dt {
+    background:var(--color-point_light);
+    padding:15px 0;
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    line-height:var(--line-150);
+    letter-spacing:var(--letter-minus2);
+}
+#wrap .row2 #quiz .quiz_current .status dt img {
+    padding-right:30px;
+}
+#wrap .row2 #quiz .quiz_current .status dd {
+    color:#000;
+    padding-top:50px;
+}
+#wrap .row2 #quiz .quiz_current .status dd em {
+    font-size:var(--text-sub_title55-d);
+    font-weight:var(--weight-bold);
+    color:var(--color-point_light);
+}
+#wrap .row2 #quiz .quiz_current .status dd span {
+    font-size:var(--text-spon_btn34-d);
+    font-weight:var(--weight-bold);
+}
+#wrap .row2 #quiz .quiz_current .status dd span:first-child {
+    color:var(--color-point_light);
+}
+#wrap .row2 #quiz .quiz_current .status dd span:nth-child(2) {
+    
+}
+#wrap .row2 #quiz .quiz_current span {
+    font-size:var(--text-content20-d);
+    line-height:var(--line-150);
+    letter-spacing:var(--letter-minus2);
+}
+#wrap .row2 #quiz .quiz_current > p {
+    font-size:var(--text-content20-d);
+    text-align:right;}
+/* --------------------------------------------------- 3행 동영상*/
+#wrap .row3 {background-image:url(../images/pc_row3_bg.png)}
+#wrap .row3 #video {
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+}
+#wrap .row3 #video h2 {}
+#wrap .row3 #video iframe {width:1048px; height:588px;}
+#wrap .row3 #video .spon_btn {
+    margin-top:100px;
+}
+#wrap .row3 #video .spon_btn img {}
+/* --------------------------------------------------- 4행 사진*/
+#wrap .row4 {background-image:url(../images/pc_row4_bg.png)}
+#wrap .row4 #img {}
+#wrap .row4 #img h2 {
+    text-align:left;
+    color:var(--color-white);
+}
+#wrap .row4 #img h2 em {
+    color:var(--color-black);
+    font-weight:var(--weight-bold);
+    position:relative;
+    
+}
+#wrap .row4 #img h2 em span {
+    color:var(--color-black);
+    font-weight:var(--weight-bold);
+    position:relative;
+    z-index:120;
+}
+#wrap .row4 #img h2 em::after {
+    content:''; display:inline-block;
+    background:var(--color-white);
+    width:230px; height:71px;
+    position:absolute; top:8px; left:4px;
+    z-index:115;
+} /* em::afer = em의 마지막 자식 */
+#wrap .row4 #img p {
+    font-size:var(--text-point30-d);
+    text-align:left;
+    color:var(--color-white);
+    margin: 80px 0;}
+#wrap .row4 #img p:nth-child(2) {}
+#wrap .row4 #img p:nth-child(2) img {}
+/* --------------------------------------------------- 5행 설명_카드*/
+#wrap .row5 {background:var(--color-bg)}
+#wrap .row5 #desc {}
+#wrap .row5 #desc h2 {}
+#wrap .row5 #desc > p {margin:60px 0 80px 0;}
+#wrap .row5 #desc .card_wrap {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); gap:20px;
+    /* display:flex;
+    flex-flow:row nowrap; justify-content:space-between;
+    align-items:top; */
+}
+#wrap .row5 #desc .card_wrap .description {
+    
+}
+#wrap .row5 #desc .card_wrap .description .card_img {
+    width:400px; height:320px;
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position:cover;
+    color:var(--color-white);
+    position:relative;
+}
+#wrap .row5 #desc .card_wrap .description:nth-child(1) .card_img {
+    background-image:url(../images/pc_row5_card1.png);
+}
+#wrap .row5 #desc .card_wrap .description:nth-child(2) .card_img {
+    background-image:url(../images/pc_row5_card2.png);
+}
+#wrap .row5 #desc .card_wrap .description:nth-child(3) .card_img {
+    background-image:url(../images/pc_row5_card3.png);
+}
+#wrap .row5 #desc .card_wrap .description .card_img::after {
+    content:''; display:block;
+    width:100%; height:100%;
+    background:linear-gradient(to top, transparent, var(--color-black));
+    position:absolute;left:0; top:0;
+    z-index:200;
+}
+#wrap .row5 #desc .card_wrap .description .card_img img {}
+#wrap .row5 #desc .card_wrap .description .card_img .title {
+    font-size:var(--text-sub_title55-d);
+    font-weight:var(--weight-bold);
+    color:var(--color-white);
+    padding:50px 0 20px;
+    position:relative; z-index:300;
+}
+#wrap .row5 #desc .card_wrap .description .card_img .title_sub {
+    position:relative; z-index:300;
+}
+#wrap .row5 #desc .card_wrap .description .card_txt {   
+    width:400px; height:300px;
+    background:var(--color-white);
+    font-size:var(--text-content20-d);
+    line-height:var(--line-150);
+    padding:75px 20px;
+}
