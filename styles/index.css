@@ -4,6 +4,7 @@
 /* --------------------------------------------------- 1행 */
 #wrap .row1 {
     background-image:url(../images/pc_row1_bg.png);position:relative;
+    height:1080px;
 }
 #wrap .row1::after {
     content:''; display:block;
@@ -12,7 +13,7 @@
     position:absolute; left:0; top:0;
     z-index:100; /* position의 선택속성이기 때문에 position 선택자가 미리 선언되었어야 한다  */
 }
-#wrap .row1 #visual {position:relative; z-index:110;
+#wrap .row1 #visual {position:relative; z-index:110; height:100%;
 }
 #wrap .row1 #visual .logo {
     text-align:left;
@@ -34,13 +35,13 @@
 #wrap .row1 #visual .spon_btn img {}
 /* 후원 질문 버튼 */
 #wrap .row1 #visual .spon_q_btn {
-    display:block; width: 550px; height:59px;
+    width:550px; height:59px;
     color:var(--color-white); background:var(--color-black);
     font-size:var(--text-spon_q_btn26-d);
     padding:10px 40px;
     border-radius:50px;
-    margin:150px 0;
     display:flex;
+    margin:150px 0 150px; margin-left:auto;
     flex-flow:row nowrap; justify-content:center; align-items: center;
 }
 #wrap .row1 #visual .spon_q_btn img {}
@@ -105,7 +106,7 @@
     width:584px; height:231px;
     background:var(--color-white); overflow:hidden;
     border-radius:20px;
-    margin-left:50px;
+    margin-left:auto;
 }
 #wrap .row2 #quiz .quiz_current .status dt {
     background:var(--color-point_light);
@@ -133,11 +134,12 @@
 #wrap .row2 #quiz .quiz_current .status dd span {
     font-size:var(--text-spon_btn34-d);
     font-weight:var(--weight-bold);
+    
 }
-#wrap .row2 #quiz .quiz_current .status dd span:first-child {
+#wrap .row2 #quiz .quiz_current .status > dd > span:nth-child(2) {
     color:var(--color-point_light);
 }
-#wrap .row2 #quiz .quiz_current .status dd span:nth-child(2) {
+#wrap .row2 #quiz .quiz_current .status > dd > span:nth-child(3) {
     
 }
 #wrap .row2 #quiz .quiz_current span {
@@ -149,11 +151,12 @@
     font-size:var(--text-content20-d);
     text-align:right;}
 /* --------------------------------------------------- 3행 동영상*/
-#wrap .row3 {background-image:url(../images/pc_row3_bg.png)}
+#wrap .row3 {background-image:url(../images/pc_row3_bg.png); height:1360px;}
 #wrap .row3 #video {
     display:flex;
     flex-flow:column nowrap;
     align-items:center;
+    height:100%;
 }
 #wrap .row3 #video h2 {}
 #wrap .row3 #video iframe {width:1048px; height:588px;}
@@ -162,8 +165,8 @@
 }
 #wrap .row3 #video .spon_btn img {}
 /* --------------------------------------------------- 4행 사진*/
-#wrap .row4 {background-image:url(../images/pc_row4_bg.png)}
-#wrap .row4 #img {}
+#wrap .row4 {background-image:url(../images/pc_row4_bg.png); height:1360px;}
+#wrap .row4 #img {height:100%;}
 #wrap .row4 #img h2 {
     text-align:left;
     color:var(--color-white);
@@ -187,18 +190,27 @@
     position:absolute; top:8px; left:4px;
     z-index:115;
 } /* em::afer = em의 마지막 자식 */
-#wrap .row4 #img p {
+#wrap .row4 #img > p {
     font-size:var(--text-point30-d);
     text-align:left;
     color:var(--color-white);
     margin: 80px 0;}
-#wrap .row4 #img p:nth-child(2) {}
-#wrap .row4 #img p:nth-child(2) img {}
+#wrap .row4 #img p:nth-child(3) {}
 /* --------------------------------------------------- 5행 설명_카드*/
-#wrap .row5 {background:var(--color-bg)}
-#wrap .row5 #desc {}
+#wrap .row5 {background:var(--color-bg); height:1360px;}
+#wrap .row5 #desc {height:100%;}
 #wrap .row5 #desc h2 {}
 #wrap .row5 #desc > p {margin:60px 0 80px 0;}
+#wrap .row5 #desc h2+p {
+    /* margin:40px 0; text-align:center; */
+    /* 한 줄 말줄임 처리 (br제거) */
+    /* width:400px;
+    white-space:nowrap; /* 한 줄 처리 */
+    /* overflow:hidden;
+    text-overflow:ellipsis; */
+    /* 설정한 width 기준 영역을 나간 글자를 말줄임 처리하기 */
+}
+#wrap .row5 #desc h2+p br {/* display:none; */}
 #wrap .row5 #desc .card_wrap {
     display:grid;
     grid-template-columns: repeat(3, 1fr); gap:20px;
@@ -207,11 +219,13 @@
     align-items:top; */
 }
 #wrap .row5 #desc .card_wrap .description {
-    
+    width:400px; 
+    padding-bottom:50px;
+    background:var(--color-white);
 }
 #wrap .row5 #desc .card_wrap .description .card_img {
-    width:400px; height:320px;
-    background-size:100%;
+    height:320px;
+    background-size:cover;
     background-repeat:no-repeat;
     background-position:cover;
     color:var(--color-white);
@@ -233,7 +247,6 @@
     position:absolute;left:0; top:0;
     z-index:200;
 }
-#wrap .row5 #desc .card_wrap .description .card_img img {}
 #wrap .row5 #desc .card_wrap .description .card_img .title {
     font-size:var(--text-sub_title55-d);
     font-weight:var(--weight-bold);
@@ -245,9 +258,16 @@
     position:relative; z-index:300;
 }
 #wrap .row5 #desc .card_wrap .description .card_txt {   
-    width:400px; height:300px;
-    background:var(--color-white);
+    max-height:300px;
+    /* background:var(--color-white); */
     font-size:var(--text-content20-d);
     line-height:var(--line-150);
-    padding:75px 20px;
-}
+    letter-spacing:var(--letter-minus2);
+    padding:50px 20px 0; /* 상, 좌우만!!!!!!!!!! */
+    /* 여러줄 말줄임(...)처리 */
+    overflow:hidden;
+    display:-webkit-box;/* 브라우저엔진 -webkit- */
+    -webkit-line-clamp:3;/* 몇줄 초과시 말줄임처리 */
+    -webkit-box-orient: vertical;/* 글 방향 */
+    text-overflow:ellipsis;/* 말줄임 속성 */
+} 
